@@ -16,7 +16,7 @@
       "administratorLoginPassword": {
         "reference": {
           "keyVault": {
-            "id": "/subscriptions/8db4f9c0-4ffc-457c-8742-9c5dd4224678/resourceGroups/ElasticPool/providers/Microsoft.KeyVault/vaults/ManagementCore"
+            "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/ElasticPool/providers/Microsoft.KeyVault/vaults/ManagementCore']"
           },
           "secretName": "sqlserveradminpassword"
         }
