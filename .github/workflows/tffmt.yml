@@ -28,3 +28,12 @@ jobs:
       # Checks that all Terraform configuration files adhere to a canonical format
       - name: Terraform Format
         run: terraform fmt -recursive
+      
+      - name: Git Add
+        run: git add .
+      
+      - name: Git Commit
+        run: git commit -m "Formatting code"
+      
+      - name: Git Push
+        run: git push
