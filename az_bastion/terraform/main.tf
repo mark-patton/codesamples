@@ -34,8 +34,8 @@ resource "azurerm_bastion_host" "azure_bastion_host" {
   resource_group_name = azurerm_resource_group.mgmt_rg.name
 
   ip_configuration {
-    name    = "configuration"
-    subnet_id     = azurerm_subnet.azure_bastion_subnet.id
+    name                 = "configuration"
+    subnet_id            = azurerm_subnet.azure_bastion_subnet.id
     public_ip_address_id = azurerm_public_ip.azure_bastion_ip.id
   }
 
