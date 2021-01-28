@@ -71,5 +71,3 @@ terraform init -backend-config="access_key=$ENV:access_key" -backend-config="sto
 ```powershell
 terraform plan -var="access_key=$ENV:access_key,key=$ENV:key,storage_account_name=$ENV:storage_account_name,container_name=$ENV:container_name"
 ```
-
-### Secret Detection - pre-commit hook in place to check for secrets
