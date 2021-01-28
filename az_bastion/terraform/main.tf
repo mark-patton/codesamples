@@ -12,11 +12,11 @@ resource "azurerm_virtual_network" "mgmt_vnet" {
 }
 
 resource "azurerm_subnet" "azure_bastion_subnet" {
-  name           = "AzureBastionSubnet"
+  name                 = "AzureBastionSubnet"
   resource_group_name  = azurerm_resource_group.mgmt_rg.name
   virtual_network_name = azurerm_virtual_network.mgmt_vnet.name
-  address_prefix     = "192.168.0.224/27"
-  depends_on        = [azurerm_virtual_network.mgmt_vnet]
+  address_prefix       = "192.168.0.224/27"
+  depends_on           = [azurerm_virtual_network.mgmt_vnet]
 }
 
 resource "azurerm_public_ip" "azure_bastion_ip" {
