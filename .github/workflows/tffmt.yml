@@ -35,4 +35,4 @@ jobs:
           author_email: 'mark.patton@live.co.uk'
           branch: # optional
           cwd: # optional, default is .
-          message: 'Run terraform fmt'
+          message: 'Formatting Terraform syntax'
