@@ -4,11 +4,11 @@ resource "azurerm_resource_group" "mgmt_rg" {
 }
 
 resource "azurerm_virtual_network" "mgmt_vnet" {
-  name                = "mgmt_core_vnet"
-  address_space       = ["192.168.0.0/16"]
-  location            = azurerm_resource_group.mgmt_rg.location
+  name           = "mgmt_core_vnet"
+  address_space    = ["192.168.0.0/16"]
+  location         = azurerm_resource_group.mgmt_rg.location
   resource_group_name = azurerm_resource_group.mgmt_rg.name
-  depends_on          = [azurerm_resource_group.mgmt_rg]
+  depends_on   = [azurerm_resource_group.mgmt_rg]
 }
 
 resource "azurerm_subnet" "azure_bastion_subnet" {
