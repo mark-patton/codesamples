@@ -31,6 +31,9 @@ jobs:
       
       - name: Git Add
         run: git add .
+
+      - name: Git Settings
+        run: git config --global user.email "DevOps-Bot@payroc.com" && git config --global user.name "DevOps-Bot"
       
       - name: Git Commit
         run: git commit -m "Formatting code"
