@@ -39,5 +39,5 @@ resource "azurerm_bastion_host" "azure_bastion_host" {
     public_ip_address_id = azurerm_public_ip.azure_bastion_ip.id
   }
 
-  depends_on = [azurerm_subnet.azure_bastion_subnet,azurerm_public_ip.azure_bastion_ip]
+  depends_on = [azurerm_subnet.azure_bastion_subnet, azurerm_public_ip.azure_bastion_ip]
 }

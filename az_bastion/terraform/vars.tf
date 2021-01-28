@@ -4,6 +4,6 @@ variable "rg_name" {
 }
 
 variable "location" {
-  type = string
+  type    = string
   default = "northeurope"
 }

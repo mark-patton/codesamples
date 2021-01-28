@@ -20,7 +20,7 @@ resource "azurerm_network_interface" "jumpbox_vm_nic" {
     subnet_id                     = azurerm_subnet.jumpbox_vnet.id
     private_ip_address_allocation = "Dynamic"
   }
-  depends_on          = [azurerm_subnet.jumpbox_vnet]
+  depends_on = [azurerm_subnet.jumpbox_vnet]
 }
 
 resource "azurerm_windows_virtual_machine" "windows_vm" {
@@ -28,7 +28,7 @@ resource "azurerm_windows_virtual_machine" "windows_vm" {
   resource_group_name = azurerm_resource_group.vm_rg.name
   location            = azurerm_resource_group.vm_rg.location
   size                = var.windows_vm_size
-  admin_username      = "adminuser"  // demo inclusion only
+  admin_username      = "adminuser"     // demo inclusion only
   admin_password      = "P@$$w0rd1234!" // demo inclusion only
   network_interface_ids = [
     azurerm_network_interface.jumpbox_vm_nic.id
@@ -46,5 +46,5 @@ resource "azurerm_windows_virtual_machine" "windows_vm" {
     version   = var.windows_vm_details["version"]
   }
 
-  depends_on  = [azurerm_network_interface.jumpbox_vm_nic]
+  depends_on = [azurerm_network_interface.jumpbox_vm_nic]
 }
