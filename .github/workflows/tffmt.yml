@@ -29,14 +29,12 @@ jobs:
       - name: Terraform Format
         run: terraform fmt -recursive
       
-      - name: Git Add
-        run: git add .
-
-      - name: Git Settings
-        run: git config --global user.email "DevOps-Bot@payroc.com" && git config --global user.name "DevOps-Bot"
-      
-      - name: Git Commit
-        run: git diff-index --quiet HEAD || git commit -m "Formatting code"
-      
-      - name: Git Push
-        run: git push
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v5.1.0
+        with:
+          add: '.'
+          author_name: 'DevOps-Bot'
+          author_email: # optional
+          branch: # optional
+          cwd: # optional, default is .
+          message: 'Run terraform fmt'
