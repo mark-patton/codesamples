@@ -36,7 +36,7 @@ jobs:
         run: git config --global user.email "DevOps-Bot@payroc.com" && git config --global user.name "DevOps-Bot"
       
       - name: Git Commit
-        run: git commit -m "Formatting code"
+        run: git diff-index --quiet HEAD || git commit -m "Formatting code"
       
       - name: Git Push
         run: git push
